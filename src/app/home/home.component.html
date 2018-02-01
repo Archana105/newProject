@@ -1,0 +1,15 @@
+<div class = "container" [@dataAdd]="dataAdd.length">
+  <h2> HOME PAGE AVAILABLE </h2>
+
+  <div class="col">
+  <form>
+    <input type="text" name="text-data" [(ngModel)]="data"  placeholder="please add item">
+    <input type="submit" [value]="btntxt" (click)="addItem()">
+  </form>
+  </div>
+  <div class="col">
+    <p class="life-container" *ngFor="let d1 of dataAdd; let i = index" (click)="removeItem(i)">
+      {{d1}}
+    </p>
+  </div>
+</div>
