@@ -1,9 +1,32 @@
-<p>
-  about works!
-</p>
 
 <div class="container">
-  <ng-container *ngFor = "let data of dataAdd">
-  {{data}}
+  <h1> ng-for loop </h1>
+  <ng-container *ngFor = "let data of dataAdd | async">
+  {{data}}<br>
+</ng-container>
+  <h1> ng-If </h1>
+  <ng-container *ngIf = "dataAdd | async as dataValue">
+  {{dataValue}}
+</ng-container><br>
+<!-- <ng-container> -->
+<h3>Hey !! u can click this image </h3>
+<img src="../.././assets/pulpitrock.jpg" (click)="clickedOnImage()" alt="Mountain View" width="500" height="300">
+<!-- </ng-container> -->
+<!-- <div id="content">
+  <div class="col">
+    <img src="../.././assets/a.jpg" alt="" />
+  </div>
+  <div class="col">
+      <img src="../.././assets/b.png" alt="" />
+  </div>
+  <div class="col">
+      <img src="../.././assets/c.jpg" alt="" />
+  </div>
+</div> -->
+<ng-container [ngSwitch]="color">
+  <div *ngSwitchCase="'red'">Hii u choose red color</div>
+  <div *ngSwitchCase="'blue'">Hii u choose blue color</div>
+  <div *ngSwitchCase="'green'">Hii u choose green color</div>
+    <div *ngSwitchDefault>Pick one color</div>
 </ng-container>
 </div>

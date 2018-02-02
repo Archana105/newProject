@@ -6,13 +6,18 @@ import { DataService } from '../data.service';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
-dataAdd: any;
+  dataAdd: any;
+  color: any = '';
   constructor(private _data: DataService) { }
 
   ngOnInit() {
-    this._data.dataValue.subscribe((res: any) => {
-      this.dataAdd = res;
-    });
+    // this._data.dataValue.subscribe((res: any) => {
+    //   this.dataAdd = res;
+    // });
+    this.dataAdd = this._data.dataValue;
   }
-
+  clickedOnImage() {
+    alert('Image is clicked');
+    alert('Thankyou 4 clicking')
+  }
 }

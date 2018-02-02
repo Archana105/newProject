@@ -12,4 +12,25 @@
       {{d1}}
     </p>
   </div>
+  <div class="col">
+    <span *ngIf="checkCondition; then condition1 else condition2">condition is valid</span>
+    <ng-template #condition1>Fist one called</ng-template>
+    <ng-template #condition2>Condition is invalid</ng-template>
+  </div>
+<h1> total after slice</h1>
+<div class="col" *ngFor="let d1 of dataAdd | slice: 0: 2 as total; let i = index">
+  {{i+1}} / {{total.length}}: {{d1}}
+</div>
+
+<h2>by using pipe with async</h2>
+<!-- <div class="col" *ngIf="dataAdd | async">
+{{dataAdd}}
+</div> -->
+
+<!-- <p>{{user | async}}</p> -->
+<h1> GET Tag by metaTag </h1>
+<div class="col" *ngFor="let a of authData">
+  <p>{{a}}</p>
+</div>
+
 </div>
